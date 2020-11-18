@@ -1,0 +1,520 @@
+:root {
+	--rojo: #E50914;
+	--fondo: #141414;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: var(--fondo);
+	font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor {
+	width: 90%;
+	margin: auto;
+}
+
+header {
+	padding: 30px 0;
+}
+
+header .contenedor {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .logotipo {
+	font-family: 'Bebas Neue', cursive;
+	font-weight: normal;
+	color: var(--rojo);
+	font-size: 40px;
+}
+
+header nav a {
+	color: #AAA;
+	text-decoration: none;
+	margin-right: 20px;
+}
+
+header nav a:hover,
+header nav a.activo {
+	color: #FFF;
+}
+
+/* ---- ----- ----- Pagina principal Principal ----- ----- ----- */
+.pagina-principal {
+	font-size: 16px;
+	min-height: 40.62em;
+	color: #fff;
+	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%),url(../img/imagen16.jpeg),url(../img/imagen22.jpeg);
+	background-position: center center;
+	background-size: cover;
+	margin-bottom: 3.12em;
+	display: flex;
+	align-items: flex-end;
+}
+
+.pagina-principal .contenedor {
+	margin: 0 auto;
+	margin-bottom: 6.25em;
+}
+
+.pagina-principal .titulo {
+	font-weight: 600;
+	font-size: 3.12em;
+	margin-bottom: 0.4em;
+}
+
+.pagina-principal .descripcion {
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.75em;
+	max-width: 50%;
+	margin-bottom: 1.25em;
+}
+
+.pagina-principal .boton {
+	background: rgba(0,0,0, 0.5);
+	border: none;
+	border-radius: 0.31em;
+	padding: 0.93em 1.87em;
+	color: #fff;
+	margin-right: 1.25em;
+	cursor: pointer;
+	transition: .3s ease all;
+	font-size: 1.12em;
+}
+
+.pagina-principal .boton:hover {
+	background: #fff;
+	color: #000;
+}
+
+.pagina-principal .boton i {
+	margin-right: 1.25em;
+
+}
+
+
+
+
+/* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
+.contenedor-titulo-controles {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+
+.contenedor-titulo-controles h3 {
+	color: #fff;
+	font-size: 30px;
+}
+
+.contenedor-titulo-controles .indicadores button {
+	background: #fff;
+	height: 3px;
+	width: 10px;
+	cursor: pointer;
+	border: none;
+	margin-right: 2px;
+}
+
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+	background: red;
+}
+
+
+/* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
+.Aspectos-importantes {
+	margin-bottom: 70px;
+}
+
+.Aspectos-importantes .contenedor-principal {
+	display: flex;
+	align-items: center;
+	position: relative;
+
+}
+
+.Aspectos-importantes .contenedor-principal .flecha-izquierda,
+.Aspectos-importantes .contenedor-principal .flecha-derecha {
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition: .2s ease all;
+}
+
+.Aspectos-importantes .contenedor-principal .flecha-izquierda:hover,
+.Aspectos-importantes .contenedor-principal .flecha-derecha:hover {
+	background: rgba(8, 8, 8, 0.9);
+}
+
+.Aspectos-importantes .contenedor-principal .flecha-izquierda {
+	left: 0;
+}
+
+.Aspectos-importantes .contenedor-principal .flecha-derecha {
+	right: 0;
+}
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+.Aspectos-importantes .contenedor-carousel {
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+
+.Aspectos-importantes .contenedor-carousel .carousel {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.Aspectos-importantes .contenedor-carousel .carousel .equipo {
+	min-width: 20%;
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(7, 7, 7, 0.3);
+}
+
+.Aspectos-importantes .contenedor-carousel .carousel .equipo.hover {
+	transform: scale(1.2);
+	transform-origin: center;
+}
+
+.Aspectos-importantes .contenedor-carousel .carousel .equipo img {
+	width: 100%;
+	vertical-align: top;
+}
+
+/* ---- ----- ----- Media Queries ----- ----- ----- */
+@media screen and (max-width: 800px) {
+	header .logotipo {
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
+
+	header .contenedor {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.pagina-principal {
+		font-size: 16px;
+	}
+
+	.pagina-principal .descripcion {
+		max-width: 100%;
+	}
+
+	.Aspectos-importantes .contenedor-carousel {
+		overflow: visible;
+	}
+
+	.Aspectos-importantes .contenedor-carousel .carousel {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+	}
+
+	.Aspectos-importantes .indicadores,
+	.Aspectos-importantes .flecha-izquierda,
+	.Aspectos-importantes .flecha-derecha {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---- ----- ----- Pagina principal Principal2 ----- ----- ----- */
+.pagina-principal2 {
+	font-size: 16px;
+	min-height: 40.62em;
+	color: #fff;
+	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%),url(../img/imagen20.jpeg); 
+
+
+	background-position: center center;
+	background-size: cover;
+	margin-bottom: 3.12em;
+	display: flex;
+	align-items: flex-end;
+}
+
+.pagina-principal2 .contenedor {
+	margin: 0 auto;
+	margin-bottom: 6.25em;
+}
+
+.pagina-principal2 .titulo {
+	font-weight: 600;
+	font-size: 3.12em;
+	margin-bottom: 0.4em;
+}
+
+.pagina-principal2 .descripcion {
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.75em;
+	max-width: 50%;
+	margin-bottom: 1.25em;
+}
+
+.pagina-principal2 .boton {
+	background: rgba(0,0,0, 0.5);
+	border: none;
+	border-radius: 0.31em;
+	padding: 0.93em 1.87em;
+	color: #fff;
+	margin-right: 1.25em;
+	cursor: pointer;
+	transition: .3s ease all;
+	font-size: 1.12em;
+}
+
+.pagina-principal2 .boton:hover {
+	background: #fff;
+	color: #000;
+}
+
+.pagina-principal2 .boton i {
+	margin-right: 1.25em;
+
+}
+
+
+
+
+/* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
+.contenedor-titulo-controles {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+
+.contenedor-titulo-controles h3 {
+	color: #fff;
+	font-size: 30px;
+}
+
+.contenedor-titulo-controles .indicadores button {
+	background: #fff;
+	height: 3px;
+	width: 10px;
+	cursor: pointer;
+	border: none;
+	margin-right: 2px;
+}
+
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+	background: red;
+}
+
+
+/* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
+.Patrocinadores-socios {
+	margin-bottom: 70px;
+}
+
+.Patrocinadores-socios .contenedor-principal {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.Patrocinadores-socios .contenedor-principal2 .flecha-izquierda,
+.Patrocinadores-socios .contenedor-principal2 .flecha-derecha {
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition: .2s ease all;
+}
+
+.Patrocinadores-socios .contenedor-principal2 .flecha-izquierda:hover,
+.Patrocinadores-socios .contenedor-principal2 .flecha-derecha:hover {
+	background: rgba(0,0,0, .9);
+}
+
+.Patrocinadores-socios .contenedor-principal2 .flecha-izquierda {
+	left: 0;
+}
+
+.Patrocinadores-socios .contenedor-principal2 .flecha-derecha {
+	right: 0;
+}
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+.Patrocinadores-socios .contenedor-carousel {
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+
+.Patrocinadores-socios .contenedor-carousel .carousel {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.Patrocinadores-socios .contenedor-carousel .carousel .equipo {
+	min-width: 20%;
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+}
+
+.Patrocinadores-socios .contenedor-carousel .carousel .equipo.hover {
+	transform: scale(1.2);
+	transform-origin: center;
+}
+
+.Patrocinadores-socios .contenedor-carousel .carousel .equipo img {
+	width: 100%;
+	vertical-align: top;
+}
+
+/* ---- ----- ----- Media Queries ----- ----- ----- */
+@media screen and (max-width: 800px) {
+	header .logotipo {
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
+
+	header .contenedor {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.pagina-principal2 {
+		font-size: 14px;
+	}
+
+	.pagina-principal2 .descripcion {
+		max-width: 100%;
+	}
+
+	.Patrocinadores-socios .contenedor-carousel {
+		overflow: visible;
+	}
+
+	.Patrocinadores-socios .contenedor-carousel .carousel {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+	}
+
+	.Patrocinadores-socios .indicadores,
+	.Patrocinadores-socios .flecha-izquierda,
+	.Patrocinadores-socios .flecha-derecha {
+		display: none;
+	}
+}
+
+
+
+
+/* ---- ----- ----- video  ----- ----- ----- */
+
+
+
+.fm-video {
+	width: 50%;
+	box-shadow: 0px 0px 6px 0px rgba(0,0,0,.5);
+	
+	
+	
+	
+	
+}
+
+.fm-video .vjs-control-bar {
+	background: #F4F4F4;
+	color: #2d5f85;
+}
+
+.fm-video .vjs-play-progress,
+.fm-video .vjs-volume-level {
+	background: #1d87d8;
+}
+
+.fm-video .vjs-slider {
+	background: #2d5f85;
+}
+
+.video-js:hover .vjs-big-play-button {
+	background: rgba(0,0,0,.2);
+}
+
+.fm-video .vjs-big-play-button {
+	background: rgba(0,0,0,.2);
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	border-radius: 100%;
+	border:none;
+}
+
+.fm-video .vjs-big-play-button:hover {
+	background: rgba(0,0,0,.5);
+}
+
+article {
+	margin: 50px 0;
+	background: #fff;
+	color: #000;
+	font-size: 18px;
+	line-height: 28px;
+	padding: 40px;
+	
+}
+
+
+@media screen and (max-width: 600px) {
+	header {
+		position: relative;
+		height: auto;
+	}
+
+	main {
+		margin-top: 80px;
+		
+	}
+}
+
